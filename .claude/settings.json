@@ -12,20 +12,13 @@
       "Glob",
       "Grep"
     ],
-    "deny": ["Bash(rm -rf *)", "Bash(sudo *)", "Bash(git push --force*)"]
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(sudo *)",
+      "Bash(git push --force*)"
+    ]
   },
   "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Edit|Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "filepath=$(jq -r '.tool_input.file_path // empty'); if [[ \"$filepath\" == *.ts || \"$filepath\" == *.tsx || \"$filepath\" == *.css || \"$filepath\" == *.json ]]; then npx prettier --write \"$filepath\" 2>/dev/null; fi"
-          }
-        ]
-      }
-    ],
     "PreToolUse": [
       {
         "matcher": "Write|Edit",
@@ -33,6 +26,25 @@
           {
             "type": "command",
             "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/protect-files.sh\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "filepath=$(jq -r '.tool_input.file_path // empty'); if [[ \"$filepath\" == *.ts || \"$filepath\" == *.tsx || \"$filepath\" == *.css || \"$filepath\" == *.json ]]; then npx prettier --write \"$filepath\" 2>/dev/null; fi"
+          },
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/check-component-size.sh\""
+          },
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/typecheck-on-edit.sh\""
           }
         ]
       }
