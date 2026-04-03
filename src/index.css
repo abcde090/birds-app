@@ -1,29 +1,37 @@
 @import "tailwindcss";
-@import "leaflet/dist/leaflet.css";
 
 @theme {
-  --color-eucalyptus-400: #4A7A4A;
-  --color-eucalyptus-500: #2D5F2D;
+  --color-eucalyptus-400: #4a7a4a;
+  --color-eucalyptus-500: #2d5f2d;
   --color-eucalyptus-600: #245024;
-  --color-eucalyptus-700: #1B3D1B;
-  --color-ochre-400: #D4A05C;
-  --color-ochre-500: #C4883A;
-  --color-ochre-600: #A8702E;
-  --color-sky-400: #7BBCE0;
-  --color-sky-500: #5BA4CF;
-  --color-sky-600: #4889B0;
-  --color-sand-100: #FAF8F4;
-  --color-sand-200: #F5F0E8;
-  --color-sand-300: #E8DFD0;
-  --color-bark-400: #8888A0;
-  --color-bark-700: #3D3D5C;
-  --color-bark-900: #1A1A2E;
-  --color-status-extinct: #6B7280;
-  --color-status-critical: #DC4545;
-  --color-status-endangered: #E85D45;
-  --color-status-vulnerable: #E8A834;
-  --color-status-near: #D4A843;
-  --color-status-least: #4CAF50;
+  --color-eucalyptus-700: #1b3d1b;
+  --color-ochre-400: #d4a05c;
+  --color-ochre-500: #c4883a;
+  --color-ochre-600: #a8702e;
+  --color-sky-400: #7bbce0;
+  --color-sky-500: #5ba4cf;
+  --color-sky-600: #4889b0;
+  --color-sand-100: #faf8f4;
+  --color-sand-200: #f5f0e8;
+  --color-sand-300: #e8dfd0;
+  --color-bark-400: #8888a0;
+  --color-bark-700: #3d3d5c;
+  --color-bark-900: #1a1a2e;
+  --color-status-extinct: #6b7280;
+  --color-status-critical: #dc4545;
+  --color-status-endangered: #e85d45;
+  --color-status-vulnerable: #e8a834;
+  --color-status-near: #d4a843;
+  --color-status-least: #4caf50;
+
+  --color-outback-gold: #f59e0b;
+  --color-outback-orange: #ea580c;
+  --color-outback-red: #dc2626;
+  --color-reef-blue: #0ea5e9;
+  --color-rare-purple: #7c3aed;
+  --color-deep-bark: #451a03;
+  --color-night-sky: #0f172a;
+
   --font-serif: "DM Serif Display", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
@@ -32,37 +40,113 @@
 body {
   margin: 0;
   font-family: var(--font-sans);
-  background-color: var(--color-sand-100);
-  color: var(--color-bark-900);
+  background-color: var(--color-night-sky);
+  color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-serif);
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.animate-fade-in { animation: fadeIn 0.3s ease-out both; }
-.animate-slide-up { animation: slideUp 0.4s ease-out both; }
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 
-.leaflet-container {
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out both;
+}
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out both;
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes particle-twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes particle-fall {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(10px, -8px);
+  }
+  66% {
+    transform: translate(-8px, 6px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
