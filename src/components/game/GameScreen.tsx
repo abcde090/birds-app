@@ -6,11 +6,16 @@ import FlyingBird from "./FlyingBird";
 import GameHUD from "./GameHUD";
 import CatchEffect from "./CatchEffect";
 import CardReveal from "./CardReveal";
+import PhaseAnnouncement from "./PhaseAnnouncement";
+import ComboIndicator from "./ComboIndicator";
+import MissFlash from "./MissFlash";
 
 export default function GameScreen() {
   const screen = useGameStore((s) => s.screen);
   const currentPhase = useGameStore((s) => s.currentPhase);
   const activeBirds = useGameStore((s) => s.activeBirds);
+  const combo = useGameStore((s) => s.combo);
+  const misses = useGameStore((s) => s.misses);
   const { start, stop, catchBird, resumeAfterReveal } = useGameLoop();
 
   const phaseConfig = PHASE_CONFIG[currentPhase];
@@ -49,6 +54,9 @@ export default function GameScreen() {
       ))}
 
       <CatchEffect />
+      <PhaseAnnouncement phase={currentPhase} />
+      <ComboIndicator combo={combo} />
+      <MissFlash misses={misses} />
 
       {screen === "card-reveal" && <CardReveal onDismiss={resumeAfterReveal} />}
     </div>

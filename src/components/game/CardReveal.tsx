@@ -1,8 +1,6 @@
-import { useEffect } from "react";
 import { useGameStore } from "../../stores/useGameStore";
 import { useBirdStore } from "../../stores/useBirdStore";
 import ConservationBadge from "../birds/ConservationBadge";
-import { CARD_REVEAL_DURATION } from "../../lib/game-config";
 
 interface Props {
   onDismiss: () => void;
@@ -13,12 +11,6 @@ export default function CardReveal({ onDismiss }: Props) {
   const getBirdBySlug = useBirdStore((s) => s.getBirdBySlug);
 
   const bird = revealBirdId ? getBirdBySlug(revealBirdId) : null;
-
-  useEffect(() => {
-    if (!bird) return;
-    const timer = setTimeout(onDismiss, CARD_REVEAL_DURATION);
-    return () => clearTimeout(timer);
-  }, [bird, onDismiss]);
 
   if (!bird) return null;
 
