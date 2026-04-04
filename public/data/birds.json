@@ -21,9 +21,9 @@
       "sa",
       "nt"
     ],
-    "imageUrl": "/images/emu.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Dromaius_novaehollandiae_%28head%29_Battersea_Park_Children%27s_Zoo.jpg/330px-Dromaius_novaehollandiae_%28head%29_Battersea_Park_Children%27s_Zoo.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Omnivore \u2014 seeds, fruits, flowers, insects, and small vertebrates",
+    "diet": "Omnivore — seeds, fruits, flowers, insects, and small vertebrates",
     "size": {
       "lengthCm": 180,
       "wingspanCm": 20,
@@ -56,9 +56,9 @@
     "regions": [
       "qld"
     ],
-    "imageUrl": "/images/southern-cassowary.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Casuarius_casuarius_MHNT.ZOO.2010.11.1.9.jpg/330px-Casuarius_casuarius_MHNT.ZOO.2010.11.1.9.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Frugivore \u2014 primarily fallen fruits, also fungi, snails, and small vertebrates",
+    "diet": "Frugivore — primarily fallen fruits, also fungi, snails, and small vertebrates",
     "size": {
       "lengthCm": 170,
       "wingspanCm": 18,
@@ -97,9 +97,9 @@
       "wa",
       "tas"
     ],
-    "imageUrl": "/images/laughing-kookaburra.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Dacelo_novaeguineae_-_head.jpg/330px-Dacelo_novaeguineae_-_head.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Carnivore \u2014 insects, lizards, snakes, mice, and small birds",
+    "diet": "Carnivore — insects, lizards, snakes, mice, and small birds",
     "size": {
       "lengthCm": 43,
       "wingspanCm": 56,
@@ -138,9 +138,9 @@
       "sa",
       "wa"
     ],
-    "imageUrl": "/images/rainbow-lorikeet.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Rainbow_lorikeet_%28Trichoglossus_moluccanus_moluccanus%29_Sydney.jpg/330px-Rainbow_lorikeet_%28Trichoglossus_moluccanus_moluccanus%29_Sydney.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Nectarivore \u2014 nectar, pollen, fruits, seeds, and occasional insects",
+    "diet": "Nectarivore — nectar, pollen, fruits, seeds, and occasional insects",
     "size": {
       "lengthCm": 30,
       "wingspanCm": 46,
@@ -179,9 +179,9 @@
       "tas",
       "act"
     ],
-    "imageUrl": "/images/sulphur-crested-cockatoo.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Sulphur-crested_cockatoo_%28Cacatua_galerita_galerita%29_Sydney.jpg/330px-Sulphur-crested_cockatoo_%28Cacatua_galerita_galerita%29_Sydney.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Herbivore \u2014 seeds, nuts, berries, flowers, roots, and grubs",
+    "diet": "Herbivore — seeds, nuts, berries, flowers, roots, and grubs",
     "size": {
       "lengthCm": 50,
       "wingspanCm": 95,
@@ -223,9 +223,9 @@
       "nt",
       "act"
     ],
-    "imageUrl": "/images/galah.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Galah_%28Eolophus_roseicapilla%29_female_in_flight_Mount_Pleasant.jpg/330px-Galah_%28Eolophus_roseicapilla%29_female_in_flight_Mount_Pleasant.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Herbivore \u2014 seeds, grains, nuts, berries, and roots",
+    "diet": "Herbivore — seeds, grains, nuts, berries, and roots",
     "size": {
       "lengthCm": 35,
       "wingspanCm": 75,
@@ -262,9 +262,9 @@
       "sa",
       "nt"
     ],
-    "imageUrl": "/images/budgerigar.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Budgerigar-_Mount_Hope.jpg/330px-Budgerigar-_Mount_Hope.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Granivore \u2014 grass seeds and cereal grains",
+    "diet": "Granivore — grass seeds and cereal grains",
     "size": {
       "lengthCm": 18,
       "wingspanCm": 30,
@@ -302,9 +302,9 @@
       "sa",
       "nt"
     ],
-    "imageUrl": "/images/cockatiel.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Nymphicus_hollandicus_MHNT.ZOO.2010.11.148.28.jpg/330px-Nymphicus_hollandicus_MHNT.ZOO.2010.11.148.28.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Granivore \u2014 seeds, grains, and fruits",
+    "diet": "Granivore — seeds, grains, and fruits",
     "size": {
       "lengthCm": 32,
       "wingspanCm": 40,
@@ -339,9 +339,9 @@
       "vic",
       "qld"
     ],
-    "imageUrl": "/images/king-parrot.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Alisterus_scapularis_-_Brunkerville.jpg/330px-Alisterus_scapularis_-_Brunkerville.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Herbivore \u2014 fruits, seeds, nuts, berries, and blossoms",
+    "diet": "Herbivore — fruits, seeds, nuts, berries, and blossoms",
     "size": {
       "lengthCm": 43,
       "wingspanCm": 52,
@@ -380,9 +380,9 @@
       "act",
       "tas"
     ],
-    "imageUrl": "/images/crimson-rosella.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Platycercus_elegans_Wilsons_Prom.jpg/330px-Platycercus_elegans_Wilsons_Prom.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Herbivore \u2014 seeds, fruits, flowers, nectar, and insects",
+    "diet": "Herbivore — seeds, fruits, flowers, nectar, and insects",
     "size": {
       "lengthCm": 36,
       "wingspanCm": 52,
@@ -420,9 +420,9 @@
       "sa",
       "nt"
     ],
-    "imageUrl": "/images/major-mitchells-cockatoo.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Lophochroa_leadbeateri_-_Karlsruhe_Zoo_01.jpg/330px-Lophochroa_leadbeateri_-_Karlsruhe_Zoo_01.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Herbivore \u2014 seeds, nuts, roots, and fruit",
+    "diet": "Herbivore — seeds, nuts, roots, and fruit",
     "size": {
       "lengthCm": 36,
       "wingspanCm": 75,
@@ -455,9 +455,9 @@
     "regions": [
       "qld"
     ],
-    "imageUrl": "/images/palm-cockatoo.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Palm_Cockatoo_0A2A7769.jpg/330px-Palm_Cockatoo_0A2A7769.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Herbivore \u2014 pandanus nuts, seeds, and fruits",
+    "diet": "Herbivore — pandanus nuts, seeds, and fruits",
     "size": {
       "lengthCm": 60,
       "wingspanCm": 80,
@@ -499,9 +499,9 @@
       "nt",
       "act"
     ],
-    "imageUrl": "/images/wedge-tailed-eagle.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tasmanian_wedge-tailed_eagle_%28Aquila_audax_fleayi%29_mobbed_by_forest_ravens_Scottsdale.jpg/330px-Tasmanian_wedge-tailed_eagle_%28Aquila_audax_fleayi%29_mobbed_by_forest_ravens_Scottsdale.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Carnivore \u2014 rabbits, hares, wallabies, reptiles, and carrion",
+    "diet": "Carnivore — rabbits, hares, wallabies, reptiles, and carrion",
     "size": {
       "lengthCm": 100,
       "wingspanCm": 230,
@@ -543,9 +543,9 @@
       "nt",
       "act"
     ],
-    "imageUrl": "/images/peregrine-falcon.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Falco_peregrinus_MHNT.ZOO.2010.11.102.1.jpg/330px-Falco_peregrinus_MHNT.ZOO.2010.11.102.1.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Carnivore \u2014 medium-sized birds, bats, and occasionally small mammals",
+    "diet": "Carnivore — medium-sized birds, bats, and occasionally small mammals",
     "size": {
       "lengthCm": 45,
       "wingspanCm": 105,
@@ -580,9 +580,9 @@
       "vic",
       "qld"
     ],
-    "imageUrl": "/images/powerful-owl.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Ninox_strenua_-Lane_Cove_National_Park%2C_Sydney%2C_Australia-8.jpg/330px-Ninox_strenua_-Lane_Cove_National_Park%2C_Sydney%2C_Australia-8.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Carnivore \u2014 possums, gliders, flying foxes, and birds",
+    "diet": "Carnivore — possums, gliders, flying foxes, and birds",
     "size": {
       "lengthCm": 60,
       "wingspanCm": 135,
@@ -623,9 +623,9 @@
       "nt",
       "act"
     ],
-    "imageUrl": "/images/nankeen-kestrel.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Nankeen_kestrel_midflight.jpg/330px-Nankeen_kestrel_midflight.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Carnivore \u2014 insects, mice, lizards, and small birds",
+    "diet": "Carnivore — insects, mice, lizards, and small birds",
     "size": {
       "lengthCm": 33,
       "wingspanCm": 73,
@@ -665,9 +665,9 @@
       "tas",
       "nt"
     ],
-    "imageUrl": "/images/white-bellied-sea-eagle.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/White-bellied_fish_eagle_%28Haliaeetus_leucogaster%29_juvenile_in_flight.jpg/330px-White-bellied_fish_eagle_%28Haliaeetus_leucogaster%29_juvenile_in_flight.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Carnivore \u2014 fish, sea snakes, turtles, waterbirds, and carrion",
+    "diet": "Carnivore — fish, sea snakes, turtles, waterbirds, and carrion",
     "size": {
       "lengthCm": 80,
       "wingspanCm": 210,
@@ -707,9 +707,9 @@
       "nt",
       "act"
     ],
-    "imageUrl": "/images/black-swan.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Black_Swan_at_Martin_Mere.JPG/330px-Black_Swan_at_Martin_Mere.JPG",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Herbivore \u2014 aquatic plants, algae, and grasses",
+    "diet": "Herbivore — aquatic plants, algae, and grasses",
     "size": {
       "lengthCm": 130,
       "wingspanCm": 190,
@@ -749,9 +749,9 @@
       "nt",
       "act"
     ],
-    "imageUrl": "/images/australian-pelican.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Pelecanus_conspicillatus_pair_swimming.jpg/330px-Pelecanus_conspicillatus_pair_swimming.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Piscivore \u2014 fish, crustaceans, and occasionally small waterbirds",
+    "diet": "Piscivore — fish, crustaceans, and occasionally small waterbirds",
     "size": {
       "lengthCm": 170,
       "wingspanCm": 250,
@@ -788,9 +788,9 @@
       "sa",
       "nt"
     ],
-    "imageUrl": "/images/brolga.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Brolga-1-Healesville%2C-Vic%2C-3.1.2008_edit.jpg/330px-Brolga-1-Healesville%2C-Vic%2C-3.1.2008_edit.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Omnivore \u2014 tubers, seeds, insects, molluscs, and frogs",
+    "diet": "Omnivore — tubers, seeds, insects, molluscs, and frogs",
     "size": {
       "lengthCm": 130,
       "wingspanCm": 200,
@@ -829,9 +829,9 @@
       "wa",
       "tas"
     ],
-    "imageUrl": "/images/royal-spoonbill.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Royal_Spoonbill_mouth_open.jpg/330px-Royal_Spoonbill_mouth_open.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Carnivore \u2014 fish, shrimp, crabs, and aquatic insects",
+    "diet": "Carnivore — fish, shrimp, crabs, and aquatic insects",
     "size": {
       "lengthCm": 77,
       "wingspanCm": 120,
@@ -870,9 +870,9 @@
       "act",
       "tas"
     ],
-    "imageUrl": "/images/australian-wood-duck.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Chenonetta_jubata_female_2.jpg/330px-Chenonetta_jubata_female_2.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Herbivore \u2014 grasses, clover, and aquatic vegetation",
+    "diet": "Herbivore — grasses, clover, and aquatic vegetation",
     "size": {
       "lengthCm": 48,
       "wingspanCm": 80,
@@ -911,9 +911,9 @@
       "act",
       "tas"
     ],
-    "imageUrl": "/images/superb-fairy-wren.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Male_and_female_superb_fairy_wren.jpg/330px-Male_and_female_superb_fairy_wren.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Insectivore \u2014 insects, spiders, and small seeds",
+    "diet": "Insectivore — insects, spiders, and small seeds",
     "size": {
       "lengthCm": 14,
       "wingspanCm": 18,
@@ -954,9 +954,9 @@
       "nt",
       "act"
     ],
-    "imageUrl": "/images/australian-magpie.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Australian_magpie_%28Gymnorhina_tibicen_tibicen%29_male_Sydney.jpg/330px-Australian_magpie_%28Gymnorhina_tibicen_tibicen%29_male_Sydney.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Omnivore \u2014 insects, larvae, worms, snails, and small vertebrates",
+    "diet": "Omnivore — insects, larvae, worms, snails, and small vertebrates",
     "size": {
       "lengthCm": 40,
       "wingspanCm": 55,
@@ -996,9 +996,9 @@
       "nt",
       "act"
     ],
-    "imageUrl": "/images/magpie-lark.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Male_magpie_lark_in_suburban_garden.jpg/330px-Male_magpie_lark_in_suburban_garden.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Insectivore \u2014 insects, larvae, earthworms, and freshwater invertebrates",
+    "diet": "Insectivore — insects, larvae, earthworms, and freshwater invertebrates",
     "size": {
       "lengthCm": 28,
       "wingspanCm": 42,
@@ -1040,9 +1040,9 @@
       "nt",
       "act"
     ],
-    "imageUrl": "/images/willie-wagtail.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Rhipidura_leucophrys_-_Glen_Davis.jpg/330px-Rhipidura_leucophrys_-_Glen_Davis.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Insectivore \u2014 flying insects, beetles, moths, and spiders",
+    "diet": "Insectivore — flying insects, beetles, moths, and spiders",
     "size": {
       "lengthCm": 20,
       "wingspanCm": 28,
@@ -1077,9 +1077,9 @@
       "wa",
       "sa"
     ],
-    "imageUrl": "/images/splendid-fairy-wren.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Splendid_Fairywren_8352.jpg/330px-Splendid_Fairywren_8352.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Insectivore \u2014 insects, spiders, and small seeds",
+    "diet": "Insectivore — insects, spiders, and small seeds",
     "size": {
       "lengthCm": 14,
       "wingspanCm": 17,
@@ -1114,9 +1114,9 @@
       "vic",
       "qld"
     ],
-    "imageUrl": "/images/satin-bowerbird.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Satin_Bowerbird_at_Bower_6533.jpg/330px-Satin_Bowerbird_at_Bower_6533.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Omnivore \u2014 fruits, flowers, leaves, seeds, and insects",
+    "diet": "Omnivore — fruits, flowers, leaves, seeds, and insects",
     "size": {
       "lengthCm": 32,
       "wingspanCm": 48,
@@ -1152,9 +1152,9 @@
       "nt",
       "wa"
     ],
-    "imageUrl": "/images/blue-winged-kookaburra.jpg",
+    "imageUrl": "https://commons.wikimedia.org/w/resources/assets/file-type-icons/fileicon-ogg.png",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Carnivore \u2014 insects, lizards, frogs, fish, and crustaceans",
+    "diet": "Carnivore — insects, lizards, frogs, fish, and crustaceans",
     "size": {
       "lengthCm": 40,
       "wingspanCm": 55,
@@ -1196,9 +1196,9 @@
       "nt",
       "act"
     ],
-    "imageUrl": "/images/sacred-kingfisher.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sacred_kingfisher_nov08.jpg/330px-Sacred_kingfisher_nov08.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Carnivore \u2014 insects, crustaceans, lizards, and small fish",
+    "diet": "Carnivore — insects, crustaceans, lizards, and small fish",
     "size": {
       "lengthCm": 22,
       "wingspanCm": 33,
@@ -1235,9 +1235,9 @@
       "qld",
       "nt"
     ],
-    "imageUrl": "/images/azure-kingfisher.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Alcedo_azurea_-_Julatten.jpg/330px-Alcedo_azurea_-_Julatten.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Piscivore \u2014 small fish, crustaceans, and aquatic insects",
+    "diet": "Piscivore — small fish, crustaceans, and aquatic insects",
     "size": {
       "lengthCm": 18,
       "wingspanCm": 26,
@@ -1275,9 +1275,9 @@
       "act",
       "tas"
     ],
-    "imageUrl": "/images/noisy-miner.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Manorina_melanocephala_domain.jpg/330px-Manorina_melanocephala_domain.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Omnivore \u2014 nectar, fruits, insects, and lerps",
+    "diet": "Omnivore — nectar, fruits, insects, and lerps",
     "size": {
       "lengthCm": 27,
       "wingspanCm": 36,
@@ -1315,9 +1315,9 @@
       "wa",
       "tas"
     ],
-    "imageUrl": "/images/new-holland-honeyeater.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Phylidonyris_novaehollandiae_Bruny_Island.jpg/330px-Phylidonyris_novaehollandiae_Bruny_Island.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Nectarivore \u2014 nectar, pollen, fruits, and insects",
+    "diet": "Nectarivore — nectar, pollen, fruits, and insects",
     "size": {
       "lengthCm": 18,
       "wingspanCm": 25,
@@ -1356,9 +1356,9 @@
       "act",
       "tas"
     ],
-    "imageUrl": "/images/eastern-spinebill.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Acanthorhynchus_tenuirostris_-_Mogo_Campground.jpg/330px-Acanthorhynchus_tenuirostris_-_Mogo_Campground.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Nectarivore \u2014 nectar from native flowers, insects, and spiders",
+    "diet": "Nectarivore — nectar from native flowers, insects, and spiders",
     "size": {
       "lengthCm": 16,
       "wingspanCm": 22,
@@ -1398,9 +1398,9 @@
       "act",
       "tas"
     ],
-    "imageUrl": "/images/red-wattlebird.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Red_Wattlebird_Anthochaera_carunculata.jpg/330px-Red_Wattlebird_Anthochaera_carunculata.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Omnivore \u2014 nectar, fruits, insects, and small vertebrates",
+    "diet": "Omnivore — nectar, fruits, insects, and small vertebrates",
     "size": {
       "lengthCm": 35,
       "wingspanCm": 48,
@@ -1441,9 +1441,9 @@
       "nt",
       "act"
     ],
-    "imageUrl": "/images/tawny-frogmouth.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Podargus_strigoides_Bonorong.jpg/330px-Podargus_strigoides_Bonorong.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Insectivore \u2014 moths, beetles, spiders, worms, slugs, and small frogs",
+    "diet": "Insectivore — moths, beetles, spiders, worms, slugs, and small frogs",
     "size": {
       "lengthCm": 45,
       "wingspanCm": 65,
@@ -1479,9 +1479,9 @@
       "qld",
       "act"
     ],
-    "imageUrl": "/images/superb-lyrebird.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Superb_lyrbird_in_scrub.jpg/330px-Superb_lyrbird_in_scrub.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Insectivore \u2014 insects, spiders, worms, and small crustaceans found by raking leaf litter",
+    "diet": "Insectivore — insects, spiders, worms, and small crustaceans found by raking leaf litter",
     "size": {
       "lengthCm": 95,
       "wingspanCm": 78,
@@ -1516,9 +1516,9 @@
       "nsw",
       "qld"
     ],
-    "imageUrl": "/images/australian-brush-turkey.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Australian_brushturkey_%28Alectura_lathami%29_female_head_Atherton.jpg/330px-Australian_brushturkey_%28Alectura_lathami%29_female_head_Atherton.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Omnivore \u2014 seeds, fruits, insects, and fallen fruit",
+    "diet": "Omnivore — seeds, fruits, insects, and fallen fruit",
     "size": {
       "lengthCm": 70,
       "wingspanCm": 85,
@@ -1542,7 +1542,7 @@
     "family": "Psittaculidae",
     "order": "Psittaciformes",
     "category": "Parrots & Cockatoos",
-    "description": "The Eclectus Parrot is remarkable for its extreme sexual dimorphism \u2014 males are bright green while females are vivid red and purple. Found in the rainforests of Cape York Peninsula, it is one of Australia's most colourful parrots.",
+    "description": "The Eclectus Parrot is remarkable for its extreme sexual dimorphism — males are bright green while females are vivid red and purple. Found in the rainforests of Cape York Peninsula, it is one of Australia's most colourful parrots.",
     "conservationStatus": "vulnerable",
     "habitats": [
       "rainforest"
@@ -1550,9 +1550,9 @@
     "regions": [
       "qld"
     ],
-    "imageUrl": "/images/eclectus-parrot.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Eclectus_roratus_-_Maroparque_01.jpg/330px-Eclectus_roratus_-_Maroparque_01.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Frugivore \u2014 fruits, flowers, nuts, seeds, and leaf buds",
+    "diet": "Frugivore — fruits, flowers, nuts, seeds, and leaf buds",
     "size": {
       "lengthCm": 35,
       "wingspanCm": 60,
@@ -1591,9 +1591,9 @@
       "wa",
       "act"
     ],
-    "imageUrl": "/images/australian-white-ibis.jpg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Threskiornis_molucca_-_Perth.jpg/330px-Threskiornis_molucca_-_Perth.jpg",
     "imageCredit": "Wikimedia Commons",
-    "diet": "Omnivore \u2014 insects, crustaceans, food scraps, and waste in urban areas",
+    "diet": "Omnivore — insects, crustaceans, food scraps, and waste in urban areas",
     "size": {
       "lengthCm": 75,
       "wingspanCm": 123,
