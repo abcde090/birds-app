@@ -16,7 +16,7 @@ export default function FlyingBird({ bird, onClick }: Props) {
 
   return (
     <button
-      className="absolute cursor-pointer border-none bg-transparent p-0 transition-transform duration-75 hover:scale-110 active:scale-90"
+      className="absolute cursor-pointer border-none bg-transparent p-0"
       style={{
         transform: `translate(${bird.x - displaySize / 2}px, ${bird.y - displaySize / 2}px) rotate(${rotation}deg)`,
         width: displaySize,
