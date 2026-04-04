@@ -30,7 +30,7 @@ export default function BirdDetail({ bird, onClose }: Props) {
           <img
             src={bird.imageUrl}
             alt={bird.commonName}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-top"
           />
         </div>
 

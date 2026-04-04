@@ -59,7 +59,7 @@ export default function FieldGuide({ onBack }: Props) {
                     <img
                       src={bird.imageUrl}
                       alt={bird.commonName}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover object-top"
                     />
                   ) : (
                     <span className="text-2xl opacity-20">🐦</span>

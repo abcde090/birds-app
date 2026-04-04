@@ -17,11 +17,11 @@ export default function CardReveal({ onDismiss }: Props) {
   return (
     <div className="absolute inset-0 z-40 flex items-center justify-center bg-black/70 backdrop-blur-sm">
       <div className="mx-4 w-full max-w-xs animate-card-flip overflow-hidden rounded-2xl bg-white shadow-2xl">
-        <div className="relative h-40 bg-sand-200">
+        <div className="relative h-48 bg-sand-200">
           <img
             src={bird.imageUrl}
             alt={bird.commonName}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-top"
           />
         </div>
         <div className="p-5 text-center">
