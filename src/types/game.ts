@@ -1,4 +1,4 @@
-import type { BirdSpecies, ConservationStatus } from "./bird";
+import type { BirdSpecies } from "./bird";
 
 export type GameScreen =
   | "title"

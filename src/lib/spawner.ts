@@ -1,4 +1,4 @@
-import type { BirdSpecies, ConservationStatus } from "../types/bird";
+import type { BirdSpecies } from "../types/bird";
 import type { DayPhase, FlyingBird, FlightPattern } from "../types/game";
 import {
   PHASE_CONFIG,
