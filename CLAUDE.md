@@ -2,108 +2,148 @@
 
 ## Project Overview
 
-This repository contains one projects:
+**Bird Catcher** — An arcade reflex game where real Australian bird photos fly across the screen and you click/tap to catch them. A 3-minute round simulates a day cycle (dawn → noon → dusk → night) with increasing difficulty. First-time catches reveal an educational flash card with species info and fun facts. Collected birds are saved to a persistent field guide.
 
-1. **Aussie Birds Web App** - Interactive Australian native bird explorer (`birds-app/`)
-
-## Birds App Tech Stack
+## Tech Stack
 
 - **Framework**: React 18 + TypeScript + Vite
 - **Styling**: Tailwind CSS v4 (via `@import "tailwindcss"` and `@theme` directive)
-- **Maps**: Leaflet + react-leaflet (OpenTopoMap tiles)
-- **Charts**: Recharts
 - **State**: Zustand (stores in `src/stores/`)
-- **Animations**: Framer Motion
-- **Routing**: React Router v6
+- **Persistence**: localStorage for collection and high scores
 
-## Development Rules
-
-### Git Workflow
-
-- Always work on the designated feature branch (never push directly to `main`)
-- Write clear, descriptive commit messages with conventional commit prefixes: `feat()`, `fix()`, `refactor()`, `docs()`
-- Commit frequently — don't accumulate large uncommitted changes
-- Push after each meaningful commit
-- Never force push unless explicitly asked
-
-### Code Style
-
-- Use TypeScript strict mode — no `any` types unless absolutely unavoidable
-- Use functional React components with hooks (no class components)
-- All components must be default exports
-- Use named exports for types, hooks, and utilities
-- Keep components under 200 lines — split into smaller components if larger
-- Use `useMemo` and `useCallback` for expensive computations and stable references
-
-### Tailwind & Styling
-
-- Use Tailwind utility classes for ALL styling — no inline styles, no CSS modules
-- Custom colors are defined in `src/index.css` under `@theme` — use them via classes like `bg-eucalyptus-500`, `text-bark-900`, `bg-sand-100`
-- Font families: `font-serif` (DM Serif Display for headings), `font-sans` (Inter for body), `font-mono` (JetBrains Mono for data)
-- Responsive breakpoints: mobile-first, use `sm:`, `md:`, `lg:`, `xl:` prefixes
-
-### Project Structure (birds-app/)
+## Project Structure
 
 ```
 src/
-  components/     # Reusable UI components grouped by domain
-    birds/        # Bird-specific components (BirdCard, BirdGrid, etc.)
-    filters/      # Filter UI components
-    layout/       # Header, Footer, navigation
-    map/          # Map-related components
-    charts/       # Data visualization components
-    ui/           # Generic reusable UI primitives
-  hooks/          # Custom React hooks
-  lib/            # Constants, utilities, helpers
-  pages/          # Route-level page components
-  stores/         # Zustand state stores
-  types/          # TypeScript type definitions
+  components/
+    game/           # Game screens and UI
+      TitleScreen.tsx        # Start screen: play, field guide, high score
+      GameScreen.tsx          # Main game viewport with HUD and birds
+      FlyingBird.tsx          # Individual bird positioned via CSS transform
+      GameHUD.tsx             # Score, combo, timer, phase, misses
+      CatchEffect.tsx         # Score popup on catch
+      CardReveal.tsx          # First-catch educational flash card
+      ResultsScreen.tsx       # End-of-round stats and new species
+      FieldGuide.tsx          # Collection grid (discovered vs undiscovered)
+      BirdDetail.tsx          # Full bird detail overlay
+      PhaseAnnouncement.tsx   # Big phase transition text
+      ComboIndicator.tsx      # Combo multiplier burst
+      MissFlash.tsx           # Screen shake on miss
+    birds/          # Reusable bird UI primitives
+      ConservationBadge.tsx
+      HabitatTag.tsx
+    ui/             # Generic UI primitives
+      AnimatedCounter.tsx
+  hooks/
+    useGameLoop.ts          # requestAnimationFrame game loop
+    useImagePreloader.ts    # Preload all bird photos before gameplay
+    useBirds.ts             # Combined bird data + filter hook
+  lib/
+    game-config.ts          # Phase timings, speeds, scoring, rarity config
+    flight-paths.ts         # Flight trajectory math (straight, arc, dive, zigzag)
+    spawner.ts              # Bird spawn logic per phase
+    constants.ts            # Labels, colors, icons
+  stores/
+    useGameStore.ts         # Game session state (score, timer, birds, screen)
+    useCollectionStore.ts   # Persistent collection (localStorage)
+    useBirdStore.ts         # Bird data fetching from JSON
+    useFilterStore.ts       # Filter state (used by field guide)
+  types/
+    bird.ts                 # BirdSpecies, ConservationStatus, HabitatType
+    game.ts                 # FlyingBird, GameScreen, DayPhase, FlightPattern
 public/
-  data/           # Static JSON data files (birds.json, regions.geojson)
+  data/
+    birds.json              # 40 Australian bird species with real photo URLs
+    regions.geojson         # Australian regions (future use)
 ```
 
-### Data & Types
+## Game Architecture
+
+### Screen Flow
+
+```
+TitleScreen → GameScreen (playing) → CardReveal (on new species) → ResultsScreen → FieldGuide
+```
+
+Screens are managed via `useGameStore.screen` state — no router needed.
+
+### Game Loop
+
+- `requestAnimationFrame` drives the loop in `useGameLoop.ts`
+- Bird positions live in a ref (not React state) to avoid per-frame re-renders
+- React state only updates for HUD values (score, combo, timer) when they change
+- Max 8 birds on screen at once
+
+### Day Cycle (3 minutes)
+
+| Phase | Time | Speed | Spawn Rate |
+|-------|------|-------|------------|
+| Dawn | 0:00–0:45 | 1.0x | every 1.8s |
+| Noon | 0:45–1:30 | 1.4x | every 1.2s |
+| Dusk | 1:30–2:15 | 1.9x | every 0.8s |
+| Night | 2:15–3:00 | 2.5x | every 0.6s |
+
+### Scoring
+
+- Conservation status drives points: common (50) → endangered (250) → critical (300)
+- Rarer birds are smaller and faster
+- Combo multiplier: x2, x3, x5, x8 (2 second window)
+- First catch of any species: +50 bonus
+- 5 misses = game over
+
+### Data
 
 - Bird data lives in `public/data/birds.json` — loaded at runtime via fetch
-- GeoJSON for Australian regions lives in `public/data/regions.geojson`
-- All types defined in `src/types/bird.ts` — import from there, don't redeclare
+- Photos are real Wikimedia Commons / Birds in Backyards URLs
+- All types defined in `src/types/bird.ts` and `src/types/game.ts`
 - Conservation statuses: `extinct`, `critically_endangered`, `endangered`, `vulnerable`, `near_threatened`, `least_concern`
-- Regions: `nsw`, `vic`, `qld`, `wa`, `sa`, `tas`, `nt`, `act`
-- Habitats: `rainforest`, `eucalyptus_forest`, `wetland`, `grassland`, `desert`, `coastal`, `mangrove`, `alpine`, `urban`
 
-### State Management
+### Persistence (localStorage)
 
-- Use Zustand stores — NOT React Context for global state
-- `useBirdStore` — bird data fetching and access
-- `useFilterStore` — search, region, habitat, conservation filters
-- `useMapStore` — map viewport, selected region, layer toggles
-- Derived/filtered data should use the `useBirds` custom hook (combines store data with filters via `useMemo`)
+- `bird-catcher-collection`: discovered bird IDs
+- `bird-catcher-high-score`: best score
+- `bird-catcher-games-played`: total games
+- `bird-catcher-total-catches`: total birds caught
 
-### Agent Best Practices
+## Development Rules
 
-- When writing large data files (>100 lines), use the **Write tool** not Bash
-- Split large tasks across multiple agents working in parallel
-- For JSON data files, split into parts if >500 lines and merge after
-- Always verify builds compile after making changes: `cd birds-app && npx tsc --noEmit`
-- Run `npm run build` before final push to catch errors
+### Code Style
 
-### Image Strategy
+- Use TypeScript strict mode — no `any` types
+- Use functional React components with hooks (no class components)
+- All components must be default exports
+- Keep components under 200 lines
+- Use `useMemo` and `useCallback` for expensive computations
 
-- Bird images use the path pattern: `/images/{bird-id}.jpg`
-- Lazy load all images with `loading="lazy"` attribute
-- Always include fallback background color on image containers
-- Image credits stored in bird data as `imageCredit` field
+### Game-Specific Rules
+
+- `requestAnimationFrame` only — no `setInterval` for the game loop
+- CSS `transform: translate()` for bird movement — never `top`/`left`
+- `will-change: transform` on flying birds
+- Bird sizes are per-rarity (defined in `RARITY_CONFIG`), not a fixed constant
+- All bird photos must use `object-top` to avoid cropping heads
+
+### Tailwind & Styling
+
+- Use Tailwind utility classes for ALL styling
+- Custom colors defined in `src/index.css` under `@theme`
+- Game palette: `outback-gold`, `outback-orange`, `outback-red`, `deep-bark`, `night-sky`
+- Font families: `font-serif` (headings), `font-sans` (body), `font-mono` (scores/data)
+
+### Git Workflow
+
+- Conventional commit prefixes: `feat()`, `fix()`, `refactor()`, `docs()`
+- Commit frequently
+- Run `npm run build` before pushing
 
 ### Performance
 
-- Lazy-load page components with `React.lazy()` + `Suspense`
-- Use staggered animations (don't animate 40+ items simultaneously)
-- Debounce search inputs (300ms)
-- Memoize filtered/sorted bird lists
+- Preload all 40 bird images before gameplay starts
+- Cap particles/effects and auto-clean after 500ms
+- Stagger spawns — never create all birds at once
 
 ### Accessibility
 
 - All images must have meaningful `alt` text
-- Interactive elements need proper focus styles
-- Color is never the sole indicator — pair with text labels
 - Touch targets minimum 44x44px on mobile
+- `prefers-reduced-motion` support in CSS
