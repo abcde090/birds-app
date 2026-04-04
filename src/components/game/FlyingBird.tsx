@@ -1,5 +1,5 @@
 import type { FlyingBird as FlyingBirdType } from "../../types/game";
-import { BIRD_SIZE_DESKTOP, BIRD_SIZE_MOBILE } from "../../lib/game-config";
+import { RARITY_CONFIG } from "../../lib/game-config";
 
 interface Props {
   bird: FlyingBirdType;
@@ -7,16 +7,20 @@ interface Props {
 }
 
 export default function FlyingBird({ bird, onClick }: Props) {
-  const size = window.innerWidth >= 768 ? BIRD_SIZE_DESKTOP : BIRD_SIZE_MOBILE;
-  const rotation = bird.direction === 1 ? 5 : -5;
+  const rarity = RARITY_CONFIG[bird.species.conservationStatus];
+  const size = rarity.size;
+  const rotation = bird.direction === 1 ? 8 : -8;
+
+  // Scale down slightly on mobile
+  const displaySize = window.innerWidth < 768 ? Math.round(size * 0.8) : size;
 
   return (
     <button
-      className="absolute cursor-pointer border-none bg-transparent p-0"
+      className="absolute cursor-pointer border-none bg-transparent p-0 transition-transform duration-75 hover:scale-110 active:scale-90"
       style={{
-        transform: `translate(${bird.x - size / 2}px, ${bird.y - size / 2}px) rotate(${rotation}deg)`,
-        width: size,
-        height: size,
+        transform: `translate(${bird.x - displaySize / 2}px, ${bird.y - displaySize / 2}px) rotate(${rotation}deg)`,
+        width: displaySize,
+        height: displaySize,
         willChange: "transform",
       }}
       onClick={(e) => {
@@ -28,8 +32,10 @@ export default function FlyingBird({ bird, onClick }: Props) {
       <img
         src={bird.species.imageUrl}
         alt={bird.species.commonName}
-        className="h-full w-full rounded-full object-cover"
-        style={{ boxShadow: "0 4px 12px rgba(0,0,0,0.3)" }}
+        className="h-full w-full rounded-full object-cover ring-2 ring-white/30"
+        style={{
+          boxShadow: "0 4px 16px rgba(0,0,0,0.4)",
+        }}
         draggable={false}
       />
     </button>
