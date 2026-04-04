@@ -107,28 +107,7 @@ Screens are managed via `useGameStore.screen` state — no router needed.
 
 ## Development Rules
 
-### Code Style
-
-- Use TypeScript strict mode — no `any` types
-- Use functional React components with hooks (no class components)
-- All components must be default exports
-- Keep components under 200 lines
-- Use `useMemo` and `useCallback` for expensive computations
-
-### Game-Specific Rules
-
-- `requestAnimationFrame` only — no `setInterval` for the game loop
-- CSS `transform: translate()` for bird movement — never `top`/`left`
-- `will-change: transform` on flying birds
-- Bird sizes are per-rarity (defined in `RARITY_CONFIG`), not a fixed constant
-- All bird photos must use `object-top` to avoid cropping heads
-
-### Tailwind & Styling
-
-- Use Tailwind utility classes for ALL styling
-- Custom colors defined in `src/index.css` under `@theme`
-- Game palette: `outback-gold`, `outback-orange`, `outback-red`, `deep-bark`, `night-sky`
-- Font families: `font-serif` (headings), `font-sans` (body), `font-mono` (scores/data)
+> Code style, game-specific, and Tailwind rules live in `.claude/rules/`. See `code-style.md`, `game-components.md`, and `tailwind-styling.md`.
 
 ### Git Workflow
 
