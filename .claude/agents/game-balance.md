@@ -10,19 +10,21 @@ You audit the Bird Catcher arcade game for balance issues.
 
 ## What to Check
 
-1. **Spawn rates** — Birds per second per phase. Dawn should be ~0.5/s, Night should be ~1.25/s. Check `spawner.ts` intervals.
+1. **Spawn rates** — Check `game-config.ts` PHASE_CONFIG intervals. Dawn ~0.56/s, Noon ~0.83/s, Dusk ~1.25/s, Night ~1.67/s.
 
-2. **Score balance** — Common (50pts) vs rare (200pts) with combo multipliers up to x8. A perfect round should score ~5000-8000. Check that scores aren't too inflated or too low.
+2. **Score balance** — Check RARITY_CONFIG: common (50pts), near_threatened (100), vulnerable (150), endangered (250), critical (300). With combo x8, a perfect round should score ~8000-15000.
 
-3. **Difficulty curve** — Speed should ramp smoothly. Check that dawn birds are catchable by casual players and night birds are challenging but not impossible.
+3. **Difficulty curve** — Speed multipliers in PHASE_CONFIG: Dawn 1.0x, Noon 1.4x, Dusk 1.9x, Night 2.5x. Base speed is 200px/s. Check that dawn birds are catchable and night birds are challenging.
 
-4. **Miss limit** — 5 misses before game over. Check that birds don't spawn too fast for the miss limit to be fair. Average player should survive the full 3 minutes.
+4. **Bird sizes** — Rarer birds are smaller: common 60px, near_threatened 52px, vulnerable 44px, endangered 36px, critical 32px. Verify in RARITY_CONFIG.
 
-5. **Combo timing** — 2 second window between catches for combo. Check this is achievable given spawn rates and flight speeds.
+5. **Miss limit** — 5 misses before game over. Check that spawn rates and speeds don't make this unfair.
 
-6. **Phase transitions** — Dawn (0:00-0:45), Noon (0:45-1:30), Dusk (1:30-2:15), Night (2:15-3:00). Check timings are respected.
+6. **Combo timing** — 2 second window between catches. Check this is achievable given spawn rates and flight speeds.
 
-7. **Rarity distribution** — Endangered birds should appear rarely. Check spawn weights match conservation status.
+7. **Phase transitions** — Dawn (180-135s), Noon (135-90s), Dusk (90-45s), Night (45-0s). Check `getPhaseForTime()`.
+
+8. **Max active birds** — Cap is 8. Check spawner respects `MAX_ACTIVE_BIRDS`.
 
 ## Output
 

@@ -12,17 +12,17 @@ You audit the Bird Catcher game for performance issues that cause lag or frame d
 
 1. **Game loop** — Must use `requestAnimationFrame`, not `setInterval` or `setTimeout`. Check `useGameLoop.ts`.
 
-2. **Active bird count** — Max 5 birds on screen at once. Check spawner logic caps this.
+2. **Active bird count** — Max 8 birds on screen at once. Check spawner logic caps this via `MAX_ACTIVE_BIRDS`.
 
-3. **Particle cleanup** — Catch burst particles must be removed after 500ms. Check for DOM element accumulation.
+3. **Effect cleanup** — Catch effects must be removed after 500ms (`CATCH_EFFECT_DURATION`). Check for DOM element accumulation in `CatchEffect.tsx`.
 
-4. **Image preloading** — All 40 bird photos must be preloaded before gameplay starts. Check for loading lag during the round.
+4. **Image preloading** — All 40 bird photos must be preloaded before gameplay starts. Check `useImagePreloader.ts`.
 
 5. **CSS transforms only** — Bird movement must use `transform: translate()` not `top`/`left`. Check `FlyingBird.tsx`.
 
-6. **State updates** — Game loop should batch state updates. Check for excessive React re-renders per frame. The game store should use `requestAnimationFrame` not React state for per-frame bird positions.
+6. **State updates** — Bird positions live in a ref (`birdsRef`) in `useGameLoop.ts`, not React state. Only HUD values should trigger re-renders.
 
-7. **Memory leaks** — Check that event listeners and timers are cleaned up on unmount. Check useEffect cleanup functions.
+7. **Memory leaks** — Check that `cancelAnimationFrame` is called on cleanup. Check all `useEffect` hooks return cleanup functions.
 
 ## Output
 
