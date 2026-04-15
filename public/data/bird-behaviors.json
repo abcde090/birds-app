@@ -1,0 +1,489 @@
+{
+  "emu": {
+    "foodPreferences": ["seed_tray", "fruit_dish"],
+    "requiredHabitat": [],
+    "activePhases": ["dawn", "morning", "afternoon"],
+    "size": "huge",
+    "temperament": "bold",
+    "flocking": false,
+    "scaredBy": ["wedge-tailed-eagle"],
+    "chases": [],
+    "attractedBy": []
+  },
+  "southern-cassowary": {
+    "foodPreferences": ["fruit_dish"],
+    "requiredHabitat": ["dense_shrub"],
+    "activePhases": ["dawn", "morning"],
+    "size": "huge",
+    "temperament": "aggressive",
+    "flocking": false,
+    "scaredBy": [],
+    "chases": ["australian-brush-turkey", "australian-magpie"],
+    "attractedBy": []
+  },
+  "laughing-kookaburra": {
+    "foodPreferences": ["mealworms", "fish_pond"],
+    "requiredHabitat": ["eucalyptus_tree"],
+    "activePhases": ["dawn", "morning", "dusk"],
+    "size": "medium",
+    "temperament": "bold",
+    "flocking": false,
+    "scaredBy": ["wedge-tailed-eagle", "powerful-owl"],
+    "chases": ["noisy-miner", "willie-wagtail"],
+    "attractedBy": []
+  },
+  "rainbow-lorikeet": {
+    "foodPreferences": ["nectar_feeder", "fruit_dish"],
+    "requiredHabitat": ["eucalyptus_tree"],
+    "activePhases": ["dawn", "morning", "afternoon"],
+    "size": "small",
+    "temperament": "bold",
+    "flocking": true,
+    "scaredBy": ["peregrine-falcon", "nankeen-kestrel"],
+    "chases": ["new-holland-honeyeater", "eastern-spinebill"],
+    "attractedBy": []
+  },
+  "sulphur-crested-cockatoo": {
+    "foodPreferences": ["seed_tray", "fruit_dish"],
+    "requiredHabitat": ["eucalyptus_tree"],
+    "activePhases": ["morning", "afternoon"],
+    "size": "large",
+    "temperament": "aggressive",
+    "flocking": true,
+    "scaredBy": ["wedge-tailed-eagle"],
+    "chases": ["crimson-rosella", "king-parrot", "galah"],
+    "attractedBy": []
+  },
+  "galah": {
+    "foodPreferences": ["seed_tray"],
+    "requiredHabitat": [],
+    "activePhases": ["dawn", "morning", "afternoon"],
+    "size": "medium",
+    "temperament": "bold",
+    "flocking": true,
+    "scaredBy": [
+      "wedge-tailed-eagle",
+      "peregrine-falcon",
+      "sulphur-crested-cockatoo"
+    ],
+    "chases": [],
+    "attractedBy": []
+  },
+  "budgerigar": {
+    "foodPreferences": ["seed_tray"],
+    "requiredHabitat": [],
+    "activePhases": ["dawn", "morning", "afternoon"],
+    "size": "tiny",
+    "temperament": "cautious",
+    "flocking": true,
+    "scaredBy": [
+      "nankeen-kestrel",
+      "peregrine-falcon",
+      "noisy-miner",
+      "laughing-kookaburra"
+    ],
+    "chases": [],
+    "attractedBy": ["cockatiel"]
+  },
+  "cockatiel": {
+    "foodPreferences": ["seed_tray"],
+    "requiredHabitat": [],
+    "activePhases": ["dawn", "morning", "afternoon"],
+    "size": "small",
+    "temperament": "cautious",
+    "flocking": true,
+    "scaredBy": [
+      "nankeen-kestrel",
+      "peregrine-falcon",
+      "sulphur-crested-cockatoo"
+    ],
+    "chases": [],
+    "attractedBy": ["budgerigar"]
+  },
+  "king-parrot": {
+    "foodPreferences": ["fruit_dish", "seed_tray"],
+    "requiredHabitat": ["eucalyptus_tree"],
+    "activePhases": ["dawn", "morning"],
+    "size": "medium",
+    "temperament": "cautious",
+    "flocking": false,
+    "scaredBy": ["sulphur-crested-cockatoo", "noisy-miner"],
+    "chases": [],
+    "attractedBy": ["crimson-rosella"]
+  },
+  "crimson-rosella": {
+    "foodPreferences": ["seed_tray", "fruit_dish", "nectar_feeder"],
+    "requiredHabitat": ["eucalyptus_tree"],
+    "activePhases": ["dawn", "morning", "afternoon"],
+    "size": "medium",
+    "temperament": "cautious",
+    "flocking": false,
+    "scaredBy": ["sulphur-crested-cockatoo", "noisy-miner"],
+    "chases": [],
+    "attractedBy": ["king-parrot"]
+  },
+  "major-mitchells-cockatoo": {
+    "foodPreferences": ["seed_tray"],
+    "requiredHabitat": ["eucalyptus_tree"],
+    "activePhases": ["dawn", "morning"],
+    "size": "medium",
+    "temperament": "shy",
+    "flocking": false,
+    "scaredBy": ["sulphur-crested-cockatoo", "galah", "noisy-miner"],
+    "chases": [],
+    "attractedBy": []
+  },
+  "palm-cockatoo": {
+    "foodPreferences": ["seed_tray", "fruit_dish"],
+    "requiredHabitat": ["eucalyptus_tree", "dead_log"],
+    "activePhases": ["dawn", "morning"],
+    "size": "large",
+    "temperament": "cautious",
+    "flocking": false,
+    "scaredBy": ["wedge-tailed-eagle"],
+    "chases": [],
+    "attractedBy": []
+  },
+  "wedge-tailed-eagle": {
+    "foodPreferences": ["mealworms"],
+    "requiredHabitat": ["rocks"],
+    "activePhases": ["morning", "afternoon", "dusk"],
+    "size": "huge",
+    "temperament": "aggressive",
+    "flocking": false,
+    "scaredBy": [],
+    "chases": [
+      "laughing-kookaburra",
+      "galah",
+      "australian-magpie",
+      "rainbow-lorikeet"
+    ],
+    "attractedBy": []
+  },
+  "peregrine-falcon": {
+    "foodPreferences": ["mealworms"],
+    "requiredHabitat": ["rocks"],
+    "activePhases": ["morning", "afternoon"],
+    "size": "medium",
+    "temperament": "aggressive",
+    "flocking": false,
+    "scaredBy": ["wedge-tailed-eagle"],
+    "chases": ["rainbow-lorikeet", "budgerigar", "cockatiel", "willie-wagtail"],
+    "attractedBy": []
+  },
+  "powerful-owl": {
+    "foodPreferences": ["mealworms"],
+    "requiredHabitat": ["eucalyptus_tree"],
+    "activePhases": ["night"],
+    "size": "large",
+    "temperament": "bold",
+    "flocking": false,
+    "scaredBy": [],
+    "chases": ["tawny-frogmouth"],
+    "attractedBy": []
+  },
+  "nankeen-kestrel": {
+    "foodPreferences": ["mealworms"],
+    "requiredHabitat": ["rocks"],
+    "activePhases": ["morning", "afternoon"],
+    "size": "small",
+    "temperament": "bold",
+    "flocking": false,
+    "scaredBy": ["wedge-tailed-eagle", "peregrine-falcon"],
+    "chases": ["budgerigar", "superb-fairy-wren", "splendid-fairy-wren"],
+    "attractedBy": []
+  },
+  "white-bellied-sea-eagle": {
+    "foodPreferences": ["fish_pond"],
+    "requiredHabitat": ["eucalyptus_tree"],
+    "activePhases": ["morning", "afternoon", "dusk"],
+    "size": "huge",
+    "temperament": "bold",
+    "flocking": false,
+    "scaredBy": [],
+    "chases": ["australian-pelican", "black-swan"],
+    "attractedBy": []
+  },
+  "black-swan": {
+    "foodPreferences": ["bird_bath", "fish_pond"],
+    "requiredHabitat": [],
+    "activePhases": ["dawn", "morning", "afternoon"],
+    "size": "huge",
+    "temperament": "cautious",
+    "flocking": false,
+    "scaredBy": ["wedge-tailed-eagle", "white-bellied-sea-eagle"],
+    "chases": [],
+    "attractedBy": []
+  },
+  "australian-pelican": {
+    "foodPreferences": ["fish_pond"],
+    "requiredHabitat": [],
+    "activePhases": ["morning", "afternoon"],
+    "size": "huge",
+    "temperament": "bold",
+    "flocking": false,
+    "scaredBy": ["white-bellied-sea-eagle"],
+    "chases": [],
+    "attractedBy": []
+  },
+  "brolga": {
+    "foodPreferences": ["mealworms", "seed_tray", "bird_bath"],
+    "requiredHabitat": [],
+    "activePhases": ["dawn", "morning"],
+    "size": "huge",
+    "temperament": "cautious",
+    "flocking": false,
+    "scaredBy": ["wedge-tailed-eagle"],
+    "chases": [],
+    "attractedBy": []
+  },
+  "royal-spoonbill": {
+    "foodPreferences": ["fish_pond", "bird_bath"],
+    "requiredHabitat": [],
+    "activePhases": ["dawn", "morning", "afternoon"],
+    "size": "large",
+    "temperament": "shy",
+    "flocking": false,
+    "scaredBy": [
+      "wedge-tailed-eagle",
+      "white-bellied-sea-eagle",
+      "noisy-miner"
+    ],
+    "chases": [],
+    "attractedBy": []
+  },
+  "australian-wood-duck": {
+    "foodPreferences": ["seed_tray", "bird_bath"],
+    "requiredHabitat": ["eucalyptus_tree"],
+    "activePhases": ["dawn", "morning", "afternoon"],
+    "size": "medium",
+    "temperament": "cautious",
+    "flocking": true,
+    "scaredBy": ["wedge-tailed-eagle", "peregrine-falcon"],
+    "chases": [],
+    "attractedBy": []
+  },
+  "superb-fairy-wren": {
+    "foodPreferences": ["mealworms", "bird_bath"],
+    "requiredHabitat": ["dense_shrub"],
+    "activePhases": ["dawn", "morning"],
+    "size": "tiny",
+    "temperament": "shy",
+    "flocking": true,
+    "scaredBy": [
+      "noisy-miner",
+      "nankeen-kestrel",
+      "laughing-kookaburra",
+      "peregrine-falcon"
+    ],
+    "chases": [],
+    "attractedBy": ["splendid-fairy-wren"]
+  },
+  "australian-magpie": {
+    "foodPreferences": ["mealworms", "seed_tray"],
+    "requiredHabitat": [],
+    "activePhases": ["dawn", "morning", "afternoon", "dusk"],
+    "size": "medium",
+    "temperament": "aggressive",
+    "flocking": false,
+    "scaredBy": ["wedge-tailed-eagle"],
+    "chases": ["noisy-miner", "magpie-lark", "willie-wagtail"],
+    "attractedBy": []
+  },
+  "magpie-lark": {
+    "foodPreferences": ["mealworms", "bird_bath"],
+    "requiredHabitat": [],
+    "activePhases": ["dawn", "morning", "afternoon"],
+    "size": "small",
+    "temperament": "bold",
+    "flocking": false,
+    "scaredBy": ["australian-magpie", "noisy-miner"],
+    "chases": ["willie-wagtail"],
+    "attractedBy": []
+  },
+  "willie-wagtail": {
+    "foodPreferences": ["mealworms"],
+    "requiredHabitat": [],
+    "activePhases": ["dawn", "morning", "afternoon"],
+    "size": "tiny",
+    "temperament": "bold",
+    "flocking": false,
+    "scaredBy": ["australian-magpie", "laughing-kookaburra"],
+    "chases": [],
+    "attractedBy": []
+  },
+  "splendid-fairy-wren": {
+    "foodPreferences": ["mealworms", "bird_bath"],
+    "requiredHabitat": ["dense_shrub"],
+    "activePhases": ["dawn", "morning"],
+    "size": "tiny",
+    "temperament": "shy",
+    "flocking": true,
+    "scaredBy": ["noisy-miner", "nankeen-kestrel", "laughing-kookaburra"],
+    "chases": [],
+    "attractedBy": ["superb-fairy-wren"]
+  },
+  "satin-bowerbird": {
+    "foodPreferences": ["fruit_dish"],
+    "requiredHabitat": ["dense_shrub", "dead_log"],
+    "activePhases": ["dawn", "morning"],
+    "size": "medium",
+    "temperament": "shy",
+    "flocking": false,
+    "scaredBy": [
+      "sulphur-crested-cockatoo",
+      "noisy-miner",
+      "australian-magpie"
+    ],
+    "chases": [],
+    "attractedBy": []
+  },
+  "blue-winged-kookaburra": {
+    "foodPreferences": ["mealworms", "fish_pond"],
+    "requiredHabitat": ["eucalyptus_tree"],
+    "activePhases": ["dawn", "morning", "dusk"],
+    "size": "medium",
+    "temperament": "bold",
+    "flocking": false,
+    "scaredBy": ["wedge-tailed-eagle"],
+    "chases": ["noisy-miner"],
+    "attractedBy": ["laughing-kookaburra"]
+  },
+  "sacred-kingfisher": {
+    "foodPreferences": ["mealworms", "fish_pond"],
+    "requiredHabitat": ["eucalyptus_tree"],
+    "activePhases": ["dawn", "morning", "afternoon"],
+    "size": "small",
+    "temperament": "cautious",
+    "flocking": false,
+    "scaredBy": ["laughing-kookaburra", "noisy-miner"],
+    "chases": [],
+    "attractedBy": []
+  },
+  "azure-kingfisher": {
+    "foodPreferences": ["fish_pond"],
+    "requiredHabitat": ["dense_shrub"],
+    "activePhases": ["dawn", "morning"],
+    "size": "tiny",
+    "temperament": "shy",
+    "flocking": false,
+    "scaredBy": ["laughing-kookaburra", "noisy-miner", "sacred-kingfisher"],
+    "chases": [],
+    "attractedBy": []
+  },
+  "noisy-miner": {
+    "foodPreferences": ["nectar_feeder", "fruit_dish", "mealworms"],
+    "requiredHabitat": ["eucalyptus_tree"],
+    "activePhases": ["dawn", "morning", "afternoon", "dusk"],
+    "size": "small",
+    "temperament": "aggressive",
+    "flocking": true,
+    "scaredBy": [
+      "wedge-tailed-eagle",
+      "australian-magpie",
+      "laughing-kookaburra"
+    ],
+    "chases": [
+      "superb-fairy-wren",
+      "splendid-fairy-wren",
+      "eastern-spinebill",
+      "new-holland-honeyeater",
+      "azure-kingfisher",
+      "sacred-kingfisher"
+    ],
+    "attractedBy": []
+  },
+  "new-holland-honeyeater": {
+    "foodPreferences": ["nectar_feeder", "bird_bath"],
+    "requiredHabitat": ["dense_shrub"],
+    "activePhases": ["dawn", "morning", "afternoon"],
+    "size": "tiny",
+    "temperament": "cautious",
+    "flocking": false,
+    "scaredBy": ["noisy-miner", "red-wattlebird", "rainbow-lorikeet"],
+    "chases": [],
+    "attractedBy": ["eastern-spinebill"]
+  },
+  "eastern-spinebill": {
+    "foodPreferences": ["nectar_feeder"],
+    "requiredHabitat": ["dense_shrub"],
+    "activePhases": ["dawn", "morning"],
+    "size": "tiny",
+    "temperament": "shy",
+    "flocking": false,
+    "scaredBy": ["noisy-miner", "red-wattlebird", "rainbow-lorikeet"],
+    "chases": [],
+    "attractedBy": ["new-holland-honeyeater"]
+  },
+  "red-wattlebird": {
+    "foodPreferences": ["nectar_feeder", "fruit_dish"],
+    "requiredHabitat": ["eucalyptus_tree"],
+    "activePhases": ["dawn", "morning", "afternoon", "dusk"],
+    "size": "medium",
+    "temperament": "aggressive",
+    "flocking": false,
+    "scaredBy": ["noisy-miner", "sulphur-crested-cockatoo"],
+    "chases": ["eastern-spinebill", "new-holland-honeyeater"],
+    "attractedBy": []
+  },
+  "tawny-frogmouth": {
+    "foodPreferences": ["mealworms"],
+    "requiredHabitat": ["eucalyptus_tree", "dead_log"],
+    "activePhases": ["night"],
+    "size": "medium",
+    "temperament": "shy",
+    "flocking": false,
+    "scaredBy": ["powerful-owl"],
+    "chases": [],
+    "attractedBy": []
+  },
+  "superb-lyrebird": {
+    "foodPreferences": ["mealworms"],
+    "requiredHabitat": ["dense_shrub", "dead_log"],
+    "activePhases": ["dawn", "morning"],
+    "size": "large",
+    "temperament": "shy",
+    "flocking": false,
+    "scaredBy": [
+      "wedge-tailed-eagle",
+      "powerful-owl",
+      "sulphur-crested-cockatoo",
+      "noisy-miner"
+    ],
+    "chases": [],
+    "attractedBy": []
+  },
+  "australian-brush-turkey": {
+    "foodPreferences": ["seed_tray", "fruit_dish", "mealworms"],
+    "requiredHabitat": ["dead_log", "dense_shrub"],
+    "activePhases": ["dawn", "morning", "afternoon"],
+    "size": "large",
+    "temperament": "bold",
+    "flocking": false,
+    "scaredBy": ["southern-cassowary", "wedge-tailed-eagle"],
+    "chases": [],
+    "attractedBy": []
+  },
+  "eclectus-parrot": {
+    "foodPreferences": ["fruit_dish", "nectar_feeder"],
+    "requiredHabitat": ["eucalyptus_tree"],
+    "activePhases": ["dawn", "morning"],
+    "size": "medium",
+    "temperament": "shy",
+    "flocking": false,
+    "scaredBy": ["sulphur-crested-cockatoo", "noisy-miner"],
+    "chases": [],
+    "attractedBy": []
+  },
+  "australian-white-ibis": {
+    "foodPreferences": ["mealworms", "fish_pond", "fruit_dish", "seed_tray"],
+    "requiredHabitat": [],
+    "activePhases": ["dawn", "morning", "afternoon", "dusk"],
+    "size": "large",
+    "temperament": "bold",
+    "flocking": true,
+    "scaredBy": ["wedge-tailed-eagle"],
+    "chases": [],
+    "attractedBy": []
+  }
+}
