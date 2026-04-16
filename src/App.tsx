@@ -61,16 +61,8 @@ function App() {
 
   if (isLoading) {
     return (
-      <div
-        style={{
-          display: "flex",
-          minHeight: "100vh",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "#0f172a",
-        }}
-      >
-        <p style={{ color: "#f59e0b", fontSize: "24px" }}>Loading...</p>
+      <div className="flex min-h-screen items-center justify-center bg-night-sky">
+        <p className="text-lg text-outback-gold">Loading...</p>
       </div>
     );
   }
