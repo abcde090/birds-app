@@ -11,60 +11,46 @@ export function useStationLoop(): void {
   const screen = useStationStore((s) => s.screen);
 
   const behaviors = useVisitorStore((s) => s.behaviors);
-  const visitors = useVisitorStore((s) => s.visitors);
-  const setVisitors = useVisitorStore((s) => s.setVisitors);
-  const setEvents = useVisitorStore((s) => s.setEvents);
-  const addSessionSpecies = useVisitorStore((s) => s.addSessionSpecies);
-  const recordDiscovery = useVisitorStore((s) => s.recordDiscovery);
-
-  const discoverBird = useCollectionStore((s) => s.discoverBird);
-  const isDiscovered = useCollectionStore((s) => s.isDiscovered);
 
   const prevPhaseRef = useRef(currentPhase);
   const prevItemCountRef = useRef(placedItems.length);
 
   const evaluate = useCallback(() => {
     if (screen !== "station-playing") return;
-    if (behaviors.length === 0) return;
 
+    const currentBehaviors = useVisitorStore.getState().behaviors;
+    if (currentBehaviors.length === 0) return;
+
+    const currentVisitors = useVisitorStore.getState().visitors;
     const seed = Date.now();
 
     const newVisits = evaluateVisitors({
       placedItems,
       currentPhase,
-      behaviors,
-      currentVisitors: visitors,
+      behaviors: currentBehaviors,
+      currentVisitors,
       seed,
     });
 
-    const { updatedVisits, events } = resolveInteractions(newVisits, behaviors);
+    const { updatedVisits, events } = resolveInteractions(
+      newVisits,
+      currentBehaviors,
+    );
 
-    setVisitors(updatedVisits);
-    setEvents(events);
+    useVisitorStore.getState().setVisitors(updatedVisits);
+    useVisitorStore.getState().setEvents(events);
 
     // Track discoveries
     for (const visit of updatedVisits) {
       if (visit.status !== "fleeing" && visit.status !== "watching") {
-        addSessionSpecies(visit.birdId);
-        if (!isDiscovered(visit.birdId)) {
-          discoverBird(visit.birdId);
-          recordDiscovery(visit.birdId);
+        useVisitorStore.getState().addSessionSpecies(visit.birdId);
+        if (!useCollectionStore.getState().isDiscovered(visit.birdId)) {
+          useCollectionStore.getState().discoverBird(visit.birdId);
+          useVisitorStore.getState().recordDiscovery(visit.birdId);
         }
       }
     }
-  }, [
-    screen,
-    placedItems,
-    currentPhase,
-    behaviors,
-    visitors,
-    setVisitors,
-    setEvents,
-    addSessionSpecies,
-    recordDiscovery,
-    discoverBird,
-    isDiscovered,
-  ]);
+  }, [screen, placedItems, currentPhase]);
 
   // Re-evaluate when phase changes
   useEffect(() => {
