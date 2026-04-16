@@ -69,13 +69,13 @@ function App() {
 
   switch (stationScreen) {
     case "station-title":
-      return <StationTitle onPlayCatcher={() => {}} />;
+      return <StationTitle />;
     case "station-playing":
       return <StationPlayingScreen />;
     case "station-summary":
       return <SessionSummary />;
     default:
-      return <StationTitle onPlayCatcher={() => {}} />;
+      return <StationTitle />;
   }
 }
 

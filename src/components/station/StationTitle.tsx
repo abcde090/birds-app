@@ -2,11 +2,7 @@ import { useCallback } from "react";
 import { useStationStore } from "../../stores/useStationStore";
 import { useCollectionStore } from "../../stores/useCollectionStore";
 
-interface StationTitleProps {
-  onPlayCatcher: () => void;
-}
-
-export default function StationTitle({ onPlayCatcher }: StationTitleProps) {
+export default function StationTitle() {
   const startNewSession = useStationStore((s) => s.startNewSession);
   const sessionNumber = useStationStore((s) => s.sessionNumber);
   const discoveredBirdIds = useCollectionStore((s) => s.discoveredBirdIds);
@@ -27,19 +23,12 @@ export default function StationTitle({ onPlayCatcher }: StationTitleProps) {
         </p>
       </div>
 
-      <div className="animate-slide-up flex flex-col items-center gap-4">
+      <div className="animate-slide-up">
         <button
           onClick={handleStart}
           className="rounded-full bg-outback-gold px-8 py-3 font-serif text-xl text-deep-bark shadow-lg transition-transform hover:scale-105 active:scale-95"
         >
           Start Session
-        </button>
-
-        <button
-          onClick={onPlayCatcher}
-          className="rounded-lg border border-eucalyptus-500/50 px-6 py-2 text-sm text-sand-200 transition-colors hover:border-outback-gold/50"
-        >
-          Play Bird Catcher instead
         </button>
       </div>
 
