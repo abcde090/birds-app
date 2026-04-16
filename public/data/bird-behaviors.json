@@ -280,7 +280,7 @@
     "attractedBy": ["splendid-fairy-wren"]
   },
   "australian-magpie": {
-    "foodPreferences": ["mealworms", "seed_tray"],
+    "foodPreferences": ["mealworms", "seed_tray", "junk_food"],
     "requiredHabitat": [],
     "activePhases": ["dawn", "morning", "afternoon", "dusk"],
     "size": "medium",
@@ -372,7 +372,12 @@
     "attractedBy": []
   },
   "noisy-miner": {
-    "foodPreferences": ["nectar_feeder", "fruit_dish", "mealworms"],
+    "foodPreferences": [
+      "nectar_feeder",
+      "fruit_dish",
+      "mealworms",
+      "junk_food"
+    ],
     "requiredHabitat": ["eucalyptus_tree"],
     "activePhases": ["dawn", "morning", "afternoon", "dusk"],
     "size": "small",
@@ -476,7 +481,13 @@
     "attractedBy": []
   },
   "australian-white-ibis": {
-    "foodPreferences": ["mealworms", "fish_pond", "fruit_dish", "seed_tray"],
+    "foodPreferences": [
+      "junk_food",
+      "mealworms",
+      "fish_pond",
+      "fruit_dish",
+      "seed_tray"
+    ],
     "requiredHabitat": [],
     "activePhases": ["dawn", "morning", "afternoon", "dusk"],
     "size": "large",

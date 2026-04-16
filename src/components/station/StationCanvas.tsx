@@ -51,7 +51,11 @@ export default function StationCanvas() {
             >
               {item && <PlacedItem item={item} onDragStart={onDragStart} />}
               {cellVisitors.map((visitor, idx) => (
-                <VisitorBird key={visitor.birdId} visit={visitor} index={idx} />
+                <VisitorBird
+                  key={visitor.visitId}
+                  visit={visitor}
+                  index={idx}
+                />
               ))}
             </GridCell>
           );

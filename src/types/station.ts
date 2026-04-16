@@ -4,7 +4,8 @@ export type FoodType =
   | "fruit_dish"
   | "mealworms"
   | "bird_bath"
-  | "fish_pond";
+  | "fish_pond"
+  | "junk_food";
 
 export type HabitatFeature =
   | "dense_shrub"
@@ -59,6 +60,7 @@ export interface BirdBehavior {
 }
 
 export interface BirdVisit {
+  readonly visitId: string;
   readonly birdId: string;
   readonly status: VisitorStatus;
   readonly position: GridPosition;

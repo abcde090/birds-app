@@ -2,7 +2,6 @@ import type {
   BirdBehavior,
   BirdVisit,
   PlacedItem,
-  GridPosition,
   FoodType,
   HabitatFeature,
 } from "../types/station";
@@ -19,18 +18,13 @@ function seededRandom(seed: number): number {
   return x - Math.floor(x);
 }
 
-function getPlacedFoodTypes(items: readonly PlacedItem[]): readonly FoodType[] {
-  const foodTypes: FoodType[] = [
-    "nectar_feeder",
-    "seed_tray",
-    "fruit_dish",
-    "mealworms",
-    "bird_bath",
-    "fish_pond",
-  ];
-  return items
-    .filter((item) => foodTypes.includes(item.type as FoodType))
-    .map((item) => item.type as FoodType);
+function hashString(s: string): number {
+  let hash = 0;
+  for (let i = 0; i < s.length; i++) {
+    hash = (hash << 5) - hash + s.charCodeAt(i);
+    hash |= 0;
+  }
+  return hash;
 }
 
 function getPlacedHabitatFeatures(
@@ -59,6 +53,7 @@ function hasShrubNearFood(
     "mealworms",
     "bird_bath",
     "fish_pond",
+    "junk_food",
   ];
   const foods = items.filter((i) => foodTypes.includes(i.type));
 
@@ -71,97 +66,83 @@ function hasShrubNearFood(
   );
 }
 
-function findFoodPosition(
-  items: readonly PlacedItem[],
-  preferences: readonly FoodType[],
-): { position: GridPosition; itemId: string } | null {
-  for (const pref of preferences) {
-    const item = items.find((i) => i.type === pref);
-    if (item) {
-      return { position: item.position, itemId: item.id };
-    }
-  }
-  return null;
-}
+const FOOD_TYPES: readonly FoodType[] = [
+  "nectar_feeder",
+  "seed_tray",
+  "fruit_dish",
+  "mealworms",
+  "bird_bath",
+  "fish_pond",
+  "junk_food",
+];
 
+/**
+ * Evaluate which birds visit which food sources.
+ * Each food item independently attracts birds that prefer it.
+ * Flocking birds appear as multiple visitors at the same source.
+ */
 export function evaluateVisitors(context: VisitContext): readonly BirdVisit[] {
-  const { placedItems, behaviors, currentVisitors, seed } = context;
+  const { placedItems, behaviors } = context;
 
-  const placedFood = getPlacedFoodTypes(placedItems);
+  const foodItems = placedItems.filter((item) =>
+    FOOD_TYPES.includes(item.type as FoodType),
+  );
+  if (foodItems.length === 0) return [];
+
   const placedHabitat = getPlacedHabitatFeatures(placedItems);
-  const currentVisitorIds = currentVisitors.map((v) => v.birdId);
   const visits: BirdVisit[] = [];
 
-  for (let i = 0; i < behaviors.length; i++) {
-    const bird = behaviors[i];
+  // For each food item, determine which birds visit IT specifically
+  for (const food of foodItems) {
+    const foodType = food.type as FoodType;
 
-    // Step 1: Check if any preferred food is placed
-    const hasFood = bird.foodPreferences.some((food) =>
-      placedFood.includes(food),
-    );
-    if (!hasFood) continue;
+    for (let b = 0; b < behaviors.length; b++) {
+      const bird = behaviors[b];
 
-    // Step 2: Check if required habitat features are present
-    const hasHabitat = bird.requiredHabitat.every((habitat) =>
-      placedHabitat.includes(habitat),
-    );
-    if (!hasHabitat) continue;
+      // Does this bird like this food?
+      if (!bird.foodPreferences.includes(foodType)) continue;
 
-    // Step 3: Check if any scaredBy birds are currently visiting
-    const scaredByPresent = bird.scaredBy.some(
-      (scaryId) =>
-        currentVisitorIds.includes(scaryId) ||
-        visits.some((v) => v.birdId === scaryId && v.status !== "fleeing"),
-    );
-    if (scaredByPresent) {
-      const foodTarget = findFoodPosition(placedItems, bird.foodPreferences);
-      visits.push({
-        birdId: bird.id,
-        status: "watching",
-        position: foodTarget?.position ?? { row: 0, col: 0 },
-        targetItemId: null,
-      });
-      continue;
+      // Does this bird have its required habitat?
+      const hasHabitat = bird.requiredHabitat.every((habitat) =>
+        placedHabitat.includes(habitat),
+      );
+      if (!hasHabitat) continue;
+
+      // Shy birds need shrub cover near any food
+      if (bird.temperament === "shy") {
+        if (!hasShrubNearFood(placedItems, 2)) continue;
+      }
+
+      // Base visit chance by temperament
+      let visitChance = 0.5;
+      if (bird.temperament === "bold" || bird.temperament === "aggressive") {
+        visitChance = 0.75;
+      } else if (bird.temperament === "cautious") {
+        visitChance = 0.55;
+      } else if (bird.temperament === "shy") {
+        visitChance = 0.35;
+      }
+
+      // Deterministic per food item — same food always attracts same birds
+      const itemSeed = hashString(food.id);
+      const roll = seededRandom(itemSeed + b * 137);
+      if (roll > visitChance) continue;
+
+      // How many of this bird appear? Flocking species bring friends.
+      const flockSize = bird.flocking
+        ? 2 + Math.floor(seededRandom(itemSeed + b * 53) * 2) // 2-3
+        : 1;
+
+      for (let n = 0; n < flockSize; n++) {
+        visits.push({
+          visitId: `${food.id}-${bird.id}-${n}`,
+          birdId: bird.id,
+          status: "eating",
+          position: food.position,
+          targetItemId: food.id,
+        });
+      }
     }
-
-    // Step 4: Check if attractedBy birds boost chance
-    const attractedBoost = bird.attractedBy.some(
-      (attractId) =>
-        currentVisitorIds.includes(attractId) ||
-        visits.some((v) => v.birdId === attractId),
-    );
-
-    // Step 5: If shy, check shrub cover near food
-    if (bird.temperament === "shy") {
-      if (!hasShrubNearFood(placedItems, 2)) continue;
-    }
-
-    // Step 6: Weighted random roll
-    let visitChance = 0.5;
-    if (bird.temperament === "bold" || bird.temperament === "aggressive") {
-      visitChance = 0.75;
-    } else if (bird.temperament === "cautious") {
-      visitChance = 0.55;
-    } else if (bird.temperament === "shy") {
-      visitChance = 0.35;
-    }
-
-    if (attractedBoost) {
-      visitChance = Math.min(visitChance + 0.3, 0.95);
-    }
-
-    const roll = seededRandom(seed + i * 137);
-    if (roll > visitChance) continue;
-
-    const foodTarget = findFoodPosition(placedItems, bird.foodPreferences);
-    if (!foodTarget) continue;
-
-    visits.push({
-      birdId: bird.id,
-      status: "eating",
-      position: foodTarget.position,
-      targetItemId: foodTarget.itemId,
-    });
   }
 
   return visits;

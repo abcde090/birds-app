@@ -52,6 +52,13 @@ export const FOOD_ITEMS: readonly StationItemDefinition[] = [
     description: "Draws kingfishers, sea eagles, and pelicans",
     category: "food",
   },
+  {
+    type: "junk_food" as FoodType,
+    name: "Bin Scraps",
+    emoji: "🍟",
+    description: "Human leftovers — irresistible to ibis and urban scavengers",
+    category: "food",
+  },
 ] as const;
 
 export const HABITAT_ITEMS: readonly StationItemDefinition[] = [
