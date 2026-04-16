@@ -17,7 +17,7 @@ interface VisitorStore {
   recordDiscovery: (birdId: string) => void;
   addSessionSpecies: (birdId: string) => void;
   resetSession: () => void;
-  getSessionStats: (phasesPlayed: number, itemsPlaced: number) => SessionStats;
+  getSessionStats: (itemsPlaced: number) => SessionStats;
 }
 
 export const useVisitorStore = create<VisitorStore>((set, get) => ({
@@ -76,13 +76,12 @@ export const useVisitorStore = create<VisitorStore>((set, get) => ({
       newDiscoveries: [],
     }),
 
-  getSessionStats: (phasesPlayed, itemsPlaced) => {
+  getSessionStats: (itemsPlaced) => {
     const state = get();
     return {
       speciesSeen: state.sessionSpecies,
       newDiscoveries: state.newDiscoveries,
       totalVisitors: state.sessionSpecies.length,
-      phasesPlayed,
       itemsPlaced,
     };
   },

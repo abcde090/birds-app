@@ -7,7 +7,6 @@ import { useBirdStore } from "../../stores/useBirdStore";
 export default function SessionSummary() {
   const startNewSession = useStationStore((s) => s.startNewSession);
   const setScreen = useStationStore((s) => s.setScreen);
-  const phasesPlayed = useStationStore((s) => s.phasesPlayed);
   const placedItems = useStationStore((s) => s.placedItems);
 
   const sessionSpecies = useVisitorStore((s) => s.sessionSpecies);
@@ -97,8 +96,8 @@ export default function SessionSummary() {
 
       <div className="animate-slide-up flex flex-col items-center gap-3">
         <p className="text-xs text-bark-400">
-          Best session: {bestSession} species | {phasesPlayed + 1} phases played
-          | {placedItems.length} items placed
+          Best session: {bestSession} species | {placedItems.length} items
+          placed
         </p>
 
         <div className="flex gap-3">

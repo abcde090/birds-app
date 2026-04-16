@@ -14,8 +14,6 @@ export type HabitatFeature =
 
 export type StationItemType = FoodType | HabitatFeature;
 
-export type TimePhase = "dawn" | "morning" | "afternoon" | "dusk" | "night";
-
 export type BirdSize = "tiny" | "small" | "medium" | "large" | "huge";
 
 export type Temperament = "shy" | "cautious" | "bold" | "aggressive";
@@ -40,12 +38,6 @@ export interface PlacedItem {
   readonly position: GridPosition;
 }
 
-export interface StationGrid {
-  readonly rows: number;
-  readonly cols: number;
-  readonly items: readonly PlacedItem[];
-}
-
 export interface StationItemDefinition {
   readonly type: StationItemType;
   readonly name: string;
@@ -54,20 +46,10 @@ export interface StationItemDefinition {
   readonly category: "food" | "habitat";
 }
 
-export interface PhaseDefinition {
-  readonly phase: TimePhase;
-  readonly label: string;
-  readonly emoji: string;
-  readonly description: string;
-  readonly gradientFrom: string;
-  readonly gradientTo: string;
-}
-
 export interface BirdBehavior {
   readonly id: string;
   readonly foodPreferences: readonly FoodType[];
   readonly requiredHabitat: readonly HabitatFeature[];
-  readonly activePhases: readonly TimePhase[];
   readonly size: BirdSize;
   readonly temperament: Temperament;
   readonly flocking: boolean;
@@ -81,19 +63,16 @@ export interface BirdVisit {
   readonly status: VisitorStatus;
   readonly position: GridPosition;
   readonly targetItemId: string | null;
-  readonly arrivedAtPhase: TimePhase;
 }
 
 export interface SessionStats {
   readonly speciesSeen: readonly string[];
   readonly newDiscoveries: readonly string[];
   readonly totalVisitors: number;
-  readonly phasesPlayed: number;
   readonly itemsPlaced: number;
 }
 
 export type StationScreen =
   | "station-title"
   | "station-playing"
-  | "station-info"
   | "station-summary";

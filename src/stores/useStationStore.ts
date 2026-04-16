@@ -1,31 +1,23 @@
 import { create } from "zustand";
 import type {
   PlacedItem,
-  TimePhase,
   StationScreen,
   GridPosition,
   StationItemType,
 } from "../types/station";
-import {
-  GRID_ROWS,
-  GRID_COLS,
-  SESSION_BUDGET,
-  getNextPhase,
-} from "../lib/station-config";
+import { GRID_ROWS, GRID_COLS, SESSION_BUDGET } from "../lib/station-config";
 
 interface StationStore {
   readonly screen: StationScreen;
   readonly placedItems: readonly PlacedItem[];
-  readonly currentPhase: TimePhase;
   readonly budget: number;
   readonly sessionNumber: number;
-  readonly phasesPlayed: number;
 
   setScreen: (screen: StationScreen) => void;
   placeItem: (type: StationItemType, position: GridPosition) => void;
   removeItem: (itemId: string) => void;
   moveItem: (itemId: string, newPosition: GridPosition) => void;
-  advancePhase: () => void;
+  endSession: () => void;
   startNewSession: () => void;
   isValidPlacement: (position: GridPosition) => boolean;
 }
@@ -42,10 +34,8 @@ const loadSessionNumber = (): number => {
 export const useStationStore = create<StationStore>((set, get) => ({
   screen: "station-title",
   placedItems: [],
-  currentPhase: "dawn",
   budget: SESSION_BUDGET,
   sessionNumber: loadSessionNumber(),
-  phasesPlayed: 0,
 
   setScreen: (screen) => set({ screen }),
 
@@ -86,17 +76,8 @@ export const useStationStore = create<StationStore>((set, get) => ({
     });
   },
 
-  advancePhase: () => {
-    const state = get();
-    const next = getNextPhase(state.currentPhase);
-    if (next === null) {
-      set({ screen: "station-summary" });
-      return;
-    }
-    set({
-      currentPhase: next,
-      phasesPlayed: state.phasesPlayed + 1,
-    });
+  endSession: () => {
+    set({ screen: "station-summary" });
   },
 
   startNewSession: () => {
@@ -105,10 +86,8 @@ export const useStationStore = create<StationStore>((set, get) => ({
     set({
       screen: "station-playing",
       placedItems: [],
-      currentPhase: "dawn",
       budget: SESSION_BUDGET,
       sessionNumber: newCount,
-      phasesPlayed: 0,
     });
   },
 

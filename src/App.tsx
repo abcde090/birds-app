@@ -6,7 +6,6 @@ import { useStationLoop } from "./hooks/useStationLoop";
 import StationTitle from "./components/station/StationTitle";
 import StationCanvas from "./components/station/StationCanvas";
 import Toolbar from "./components/station/Toolbar";
-import TimeControl from "./components/station/TimeControl";
 import VisitorList from "./components/station/VisitorList";
 import BirdInfoCard from "./components/station/BirdInfoCard";
 import SessionSummary from "./components/station/SessionSummary";
@@ -14,6 +13,7 @@ import SessionSummary from "./components/station/SessionSummary";
 function StationPlayingScreen() {
   useStationLoop();
   const newDiscoveries = useVisitorStore((s) => s.newDiscoveries);
+  const endSession = useStationStore((s) => s.endSession);
   const [showInfoCard, setShowInfoCard] = useState<string | null>(null);
   const [shownCards, setShownCards] = useState<readonly string[]>([]);
 
@@ -34,12 +34,17 @@ function StationPlayingScreen() {
   return (
     <div className="flex min-h-screen flex-col gap-2 bg-night-sky p-2 md:flex-row">
       <div className="flex flex-1 flex-col gap-2">
-        <TimeControl />
         <StationCanvas />
       </div>
       <div className="flex w-full flex-col gap-2 md:w-64">
         <Toolbar />
         <VisitorList />
+        <button
+          onClick={endSession}
+          className="rounded-lg border border-eucalyptus-500/50 px-4 py-2 text-sm text-sand-200 transition-colors hover:border-outback-gold/50"
+        >
+          End Session
+        </button>
       </div>
       {showInfoCard && (
         <BirdInfoCard birdId={showInfoCard} onDismiss={handleDismissCard} />

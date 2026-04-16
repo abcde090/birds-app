@@ -7,12 +7,8 @@ import { resolveInteractions } from "../lib/interaction-engine";
 
 export function useStationLoop(): void {
   const placedItems = useStationStore((s) => s.placedItems);
-  const currentPhase = useStationStore((s) => s.currentPhase);
   const screen = useStationStore((s) => s.screen);
-
   const behaviors = useVisitorStore((s) => s.behaviors);
-
-  const prevPhaseRef = useRef(currentPhase);
   const prevItemCountRef = useRef(placedItems.length);
 
   const evaluate = useCallback(() => {
@@ -26,7 +22,6 @@ export function useStationLoop(): void {
 
     const newVisits = evaluateVisitors({
       placedItems,
-      currentPhase,
       behaviors: currentBehaviors,
       currentVisitors,
       seed,
@@ -40,7 +35,6 @@ export function useStationLoop(): void {
     useVisitorStore.getState().setVisitors(updatedVisits);
     useVisitorStore.getState().setEvents(events);
 
-    // Track discoveries
     for (const visit of updatedVisits) {
       if (visit.status !== "fleeing" && visit.status !== "watching") {
         useVisitorStore.getState().addSessionSpecies(visit.birdId);
@@ -50,15 +44,7 @@ export function useStationLoop(): void {
         }
       }
     }
-  }, [screen, placedItems, currentPhase]);
-
-  // Re-evaluate when phase changes
-  useEffect(() => {
-    if (prevPhaseRef.current !== currentPhase) {
-      prevPhaseRef.current = currentPhase;
-      evaluate();
-    }
-  }, [currentPhase, evaluate]);
+  }, [screen, placedItems]);
 
   // Re-evaluate when items change
   useEffect(() => {

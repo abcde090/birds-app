@@ -2,22 +2,15 @@ import { useMemo } from "react";
 import { useStationStore } from "../../stores/useStationStore";
 import { useVisitorStore } from "../../stores/useVisitorStore";
 import { useDragDrop } from "../../hooks/useDragDrop";
-import {
-  getPhaseDefinition,
-  GRID_ROWS,
-  GRID_COLS,
-} from "../../lib/station-config";
+import { GRID_ROWS, GRID_COLS } from "../../lib/station-config";
 import GridCell from "./GridCell";
 import PlacedItem from "./PlacedItem";
 import VisitorBird from "./VisitorBird";
 
 export default function StationCanvas() {
   const placedItems = useStationStore((s) => s.placedItems);
-  const currentPhase = useStationStore((s) => s.currentPhase);
   const visitors = useVisitorStore((s) => s.visitors);
   const { onDragStart, onDragOver, onDrop } = useDragDrop();
-
-  const phaseDef = getPhaseDefinition(currentPhase);
 
   const grid = useMemo(() => {
     const cells: { row: number; col: number }[] = [];
@@ -30,12 +23,7 @@ export default function StationCanvas() {
   }, []);
 
   return (
-    <div
-      className="relative flex-1 rounded-lg p-2"
-      style={{
-        background: `linear-gradient(135deg, ${phaseDef.gradientFrom}, ${phaseDef.gradientTo})`,
-      }}
-    >
+    <div className="relative flex-1 rounded-lg bg-gradient-to-b from-sky-400 to-eucalyptus-500 p-2">
       <div
         className="grid h-full w-full gap-1"
         style={{

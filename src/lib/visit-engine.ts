@@ -2,7 +2,6 @@ import type {
   BirdBehavior,
   BirdVisit,
   PlacedItem,
-  TimePhase,
   GridPosition,
   FoodType,
   HabitatFeature,
@@ -10,7 +9,6 @@ import type {
 
 interface VisitContext {
   readonly placedItems: readonly PlacedItem[];
-  readonly currentPhase: TimePhase;
   readonly behaviors: readonly BirdBehavior[];
   readonly currentVisitors: readonly BirdVisit[];
   readonly seed: number;
@@ -87,8 +85,7 @@ function findFoodPosition(
 }
 
 export function evaluateVisitors(context: VisitContext): readonly BirdVisit[] {
-  const { placedItems, currentPhase, behaviors, currentVisitors, seed } =
-    context;
+  const { placedItems, behaviors, currentVisitors, seed } = context;
 
   const placedFood = getPlacedFoodTypes(placedItems);
   const placedHabitat = getPlacedHabitatFeatures(placedItems);
@@ -110,11 +107,7 @@ export function evaluateVisitors(context: VisitContext): readonly BirdVisit[] {
     );
     if (!hasHabitat) continue;
 
-    // Step 3: Check if this phase is active
-    const isActivePhase = bird.activePhases.includes(currentPhase);
-    if (!isActivePhase) continue;
-
-    // Step 4: Check if any scaredBy birds are currently visiting
+    // Step 3: Check if any scaredBy birds are currently visiting
     const scaredByPresent = bird.scaredBy.some(
       (scaryId) =>
         currentVisitorIds.includes(scaryId) ||
@@ -127,24 +120,23 @@ export function evaluateVisitors(context: VisitContext): readonly BirdVisit[] {
         status: "watching",
         position: foodTarget?.position ?? { row: 0, col: 0 },
         targetItemId: null,
-        arrivedAtPhase: currentPhase,
       });
       continue;
     }
 
-    // Step 5: Check if attractedBy birds boost chance
+    // Step 4: Check if attractedBy birds boost chance
     const attractedBoost = bird.attractedBy.some(
       (attractId) =>
         currentVisitorIds.includes(attractId) ||
         visits.some((v) => v.birdId === attractId),
     );
 
-    // Step 6: If shy, check shrub cover near food
+    // Step 5: If shy, check shrub cover near food
     if (bird.temperament === "shy") {
       if (!hasShrubNearFood(placedItems, 2)) continue;
     }
 
-    // Step 7: Weighted random roll
+    // Step 6: Weighted random roll
     let visitChance = 0.5;
     if (bird.temperament === "bold" || bird.temperament === "aggressive") {
       visitChance = 0.75;
@@ -169,7 +161,6 @@ export function evaluateVisitors(context: VisitContext): readonly BirdVisit[] {
       status: "eating",
       position: foodTarget.position,
       targetItemId: foodTarget.itemId,
-      arrivedAtPhase: currentPhase,
     });
   }
 
