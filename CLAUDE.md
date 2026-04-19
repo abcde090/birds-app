@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**Feeding Station** — A strategic puzzle game where you build a bird feeding station in an Australian backyard. Drag food, water, and vegetation onto a grid to attract real Australian bird species. Each species has unique behavior — aggressive birds bully smaller ones, shy birds need cover, scavengers flock to junk food. The goal is to discover all 40 species by building the right combinations.
+**Feeding Station** — A strategic puzzle game where you build a bird feeding station in an Australian backyard. Drag food, water, and vegetation onto a grid to attract real Australian bird species. Each species has its own preferences — shy birds need dense shrub cover nearby, kookaburras need a eucalyptus tree to perch on, scavengers flock to junk food, and social species arrive in groups of 2–3. The goal is to discover all 40 species by placing the right combinations.
 
 **Note:** This is a sister project to [bird-catcher](https://github.com/abcde090/bird-catcher) — an arcade reflex game using the same bird dataset.
 
